@@ -8,12 +8,11 @@ public class FourBalls extends PApplet{
     public static final int Ball1Height = HEIGHT / 5;
     public static final int WIDTH = 640;
     public static final int RGB1 = 255;
-    public static final int DIAMETERX = 20;
-    public static final int DIAMETERY = 20;
-    public static int X = 0;
-    public static int X2 = 0;
-    public static int X3 = 0;
-    public static int X4 = 0;
+    public static final int DIAMETER = 20;
+    public static int COORDINATE1 = 0;
+    public static int COORDINATE2 = 0;
+    public static int COORDINATE3 = 0;
+    public static int COORDINATE4 = 0;
 
     public static void main(String[] args) {
         PApplet.main("FourBalls",args);
@@ -34,18 +33,18 @@ public class FourBalls extends PApplet{
     @Override
     public void draw() {
         textSize(20f);
-        text("Ball-1",0,Ball1Height,0);
-        ellipse(X, Ball1Height, DIAMETERX, DIAMETERY);
-        X++;
-        text("Ball-2",0,Ball2Height,0);
-        ellipse(X2, Ball2Height, DIAMETERX, DIAMETERY);
-        X2+=2;
-        text("Ball-3",0,Ball3Height,0);
-        ellipse(X3, Ball3Height, DIAMETERX, DIAMETERY);
-        X3+=3;
-        text("Ball-4",0,Ball4Height,0);
-        ellipse(X4, Ball4Height, DIAMETERX, DIAMETERY);
-        X4+=4;
+
+        ellipse(COORDINATE1, Ball1Height, DIAMETER, DIAMETER);
+        COORDINATE1++;
+
+        ellipse(COORDINATE2, Ball2Height, DIAMETER, DIAMETER);
+        COORDINATE2+=2;
+
+        ellipse(COORDINATE3, Ball3Height, DIAMETER, DIAMETER);
+        COORDINATE3+=3;
+
+        ellipse(COORDINATE4, Ball4Height, DIAMETER, DIAMETER);
+        COORDINATE4+=4;
 
     }
 }
