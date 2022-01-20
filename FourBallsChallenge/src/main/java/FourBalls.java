@@ -2,10 +2,10 @@ import processing.core.PApplet;
 public class FourBalls extends PApplet{
 
     public static final int HEIGHT = 480;
-    public static final int Ball4Height = HEIGHT * 4 / 5;
-    public static final int Ball3Height = HEIGHT * 3 / 5;
-    public static final int Ball2Height = HEIGHT * 2 / 5;
-    public static final int Ball1Height = HEIGHT / 5;
+    public static final int ball4Height = HEIGHT * 4 / 5;
+    public static final int ball3Height = HEIGHT * 3 / 5;
+    public static final int ball2Height = HEIGHT * 2 / 5;
+    public static final int ball1Height = HEIGHT / 5;
     public static final int WIDTH = 640;
     public static final int RGB1 = 255;
     public static final int DIAMETER = 20;
@@ -29,21 +29,23 @@ public class FourBalls extends PApplet{
         super.setup();
         background(RGB1);
     }
-
+    public void drawBallToWindow(int ballCoordinate, int heightOfBall, int diameter){
+        ellipse(ballCoordinate, heightOfBall, diameter, diameter);
+    }
     @Override
     public void draw() {
         textSize(20f);
 
-        ellipse(COORDINATE1, Ball1Height, DIAMETER, DIAMETER);
+        drawBallToWindow(COORDINATE1, ball1Height, DIAMETER);
         COORDINATE1++;
 
-        ellipse(COORDINATE2, Ball2Height, DIAMETER, DIAMETER);
+        drawBallToWindow(COORDINATE2, ball2Height, DIAMETER);
         COORDINATE2+=2;
 
-        ellipse(COORDINATE3, Ball3Height, DIAMETER, DIAMETER);
+        drawBallToWindow(COORDINATE3, ball3Height, DIAMETER);
         COORDINATE3+=3;
 
-        ellipse(COORDINATE4, Ball4Height, DIAMETER, DIAMETER);
+        drawBallToWindow(COORDINATE4, ball4Height, DIAMETER);
         COORDINATE4+=4;
 
     }
